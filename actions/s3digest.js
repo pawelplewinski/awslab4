@@ -9,7 +9,7 @@ var task =  function(request, callback){
 	AWS.config.loadFromPath('./config.json');
 	var s3 = new AWS.S3();
 	s3.getObject(
-	{bucket: params.bucket, key: params.key},
+	{Bucket: params.bucket, Key: params.key},
 	function(error, data) {
 		if (error)
 		{

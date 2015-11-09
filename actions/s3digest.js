@@ -18,7 +18,7 @@ var task =  function(request, callback){
 		}
 		console.log(data)
 		var digest = require('../helpers');
-		var checksum = digest.calculateDigest('sha1', data);
+		var checksum = digest.calculateDigest('sha1', data.Body);
 		callback(null, checksum);
 		return;
 	});

@@ -21,7 +21,7 @@ var task = function(request, callback){
 	policy.generateSignature(awsConfig.secretAccessKey);
 	console.log(s3Form.generateS3FormFields)
 
-	callback(null, {template: INDEX_TEMPLATE, params:{fields:s3Form.generateS3FormFields, bucket:""}});
+	callback(null, {template: INDEX_TEMPLATE, params:{fields:s3Form.generateS3FormFields.conditions, bucket:""}});
 }
 
 exports.action = task;

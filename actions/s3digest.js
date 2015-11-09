@@ -23,7 +23,7 @@ var task =  function(request, callback){
 		return;
 	});
 		
-	callback("error");
+	//callback("error");
 	//var url_parts = url.parse(request.url, true);
 	
 	

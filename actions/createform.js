@@ -18,9 +18,12 @@ var task = function(request, callback){
 	//3. generate form fields for S3 POST
 	var s3Form = new S3Form(policy);
 	//4. get bucket name
+	fields = policy;
+	fields.key = Math.random().toString(36).substr(2, 5);
 	
+	console.log(policy)
 
-	callback(null, {template: INDEX_TEMPLATE, params:{fields:[], bucket:""}});
+	callback(null, {template: INDEX_TEMPLATE, params:{fields:fields, bucket:""}});
 }
 
 exports.action = task;

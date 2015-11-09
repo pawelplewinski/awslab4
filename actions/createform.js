@@ -18,7 +18,7 @@ var task = function(request, callback){
 	//3. generate form fields for S3 POST
 	var s3Form = new S3Form(policy);
 	//4. get bucket name
-	bucketName = policyData.getConditionValueByKey("bucket")
+	bucketName = policy.getConditionValueByKey("bucket")
 	policy.generateSignature(awsConfig.secretAccessKey);
 	fields = s3Form.generateS3FormFields();
 	s3Form.addS3CredientalsFields(fields, awsConfig);

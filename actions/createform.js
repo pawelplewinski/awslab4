@@ -19,9 +19,12 @@ var task = function(request, callback){
 	var s3Form = new S3Form(policy);
 	//4. get bucket name
 	policy.generateSignature(awsConfig.secretAccessKey);
-	console.log(s3Form.generateS3FormFields)
+	fields = s3Form.generateS3FormFields();
+	s3Form.addS3CredientalsFields(fields, awsConfig);
 
-	callback(null, {template: INDEX_TEMPLATE, params:{fields:s3Form.generateS3FormFields.conditions, bucket:""}});
+	console.log(s3Form.fields)
+
+	callback(null, {template: INDEX_TEMPLATE, params:{fields:fields, bucket:""}});
 }
 
 exports.action = task;

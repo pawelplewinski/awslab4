@@ -16,9 +16,11 @@ var task =  function(request, callback){
 			callback(error);
 			return;
 		}
-		var digest = require('helpers');
-		var checksum = digest.calculateDigest('sha-1', data);
+		console.log(data)
+		var digest = require('../helpers');
+		var checksum = digest.calculateDigest('sha1', data);
 		callback(null, checksum);
+		return;
 	});
 		
 	callback("error");
